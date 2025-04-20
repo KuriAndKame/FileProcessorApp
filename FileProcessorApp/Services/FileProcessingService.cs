@@ -27,7 +27,7 @@ public class FileProcessingService : BackgroundService
 
     protected override Task ExecuteAsync(CancellationToken stoppingToken)
     {
-        _logger.LogWarning("🧪 Создаем папку: {WatchFolder}", _watchFolder);
+        _logger.LogWarning("Creating folder: {WatchFolder}", _watchFolder);
         Directory.CreateDirectory(_watchFolder); // на всякий случай, если папки нет
 
         _watcher = new FileSystemWatcher(_watchFolder, "*.txt")
